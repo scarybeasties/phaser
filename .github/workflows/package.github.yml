@@ -7,5 +7,5 @@ on:
 
 jobs:
   package-github:
-    uses: scarybeasties/workflows/.github/workflows/package.npm.github.yml@main
+    uses: scarybeasties/workflows/.github/workflows/package.npm.github.public.yml@main
     secrets: inherit
