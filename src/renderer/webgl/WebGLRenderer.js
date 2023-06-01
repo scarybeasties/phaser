@@ -859,9 +859,9 @@ var WebGLRenderer = new Class({
 
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 
-        // gl.enable(gl.SCISSOR_TEST);
+        gl.enable(gl.SCISSOR_TEST);
 
-        // game.scale.on(ScaleEvents.RESIZE, this.onResize, this);
+        game.scale.on(ScaleEvents.RESIZE, this.onResize, this);
 
         this.resize(width, height);
     },
