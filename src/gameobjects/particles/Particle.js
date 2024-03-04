@@ -1,6 +1,6 @@
 /**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2013-2023 Photon Storm Ltd.
+ * @author       Richard Davey <rich@phaser.io>
+ * @copyright    2013-2024 Phaser Studio Inc.
  * @license      {@link https://opensource.org/licenses/MIT|MIT License}
  */
 
@@ -278,7 +278,7 @@ var Particle = new Class({
          * The data used by the ease equation.
          *
          * @name Phaser.GameObjects.Particles.Particle#data
-         * @type {object}
+         * @type {Phaser.Types.GameObjects.Particles.ParticleData}
          * @since 3.0.0
          */
         this.data = {
@@ -299,7 +299,7 @@ var Particle = new Class({
         };
 
         /**
-         * Interal private value.
+         * Internal private value.
          *
          * @name Phaser.GameObjects.Particles.Particle#isCropped
          * @type {boolean}
@@ -638,7 +638,7 @@ var Particle = new Class({
             return true;
         }
 
-        this.alpha = ops.alpha.onUpdate(this, 'alpha', t, this.alpha);
+        this.alpha = Clamp(ops.alpha.onUpdate(this, 'alpha', t, this.alpha), 0, 1);
 
         if (ops.color.active)
         {
